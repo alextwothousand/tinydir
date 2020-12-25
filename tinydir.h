@@ -29,6 +29,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef TINYDIR_H
 #define TINYDIR_H
 
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -260,6 +261,7 @@ size_t _tinydir_dirent_buf_size(_TINYDIR_DIR *dirp);
 
 
 /* definitions*/
+#ifndef TINYDIR_HEADER_ONLY
 
 _TINYDIR_FUNC
 int tinydir_open(tinydir_dir *dir, const _tinydir_char_t *path)
@@ -823,6 +825,8 @@ size_t _tinydir_dirent_buf_size(_TINYDIR_DIR *dirp)
 #ifdef __cplusplus
 }
 #endif
+
+#endif /* TINYDIR_HEADER_ONLY */
 
 # if defined (_MSC_VER)
 # pragma warning(pop)
